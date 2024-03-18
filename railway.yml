@@ -1,7 +1,9 @@
+version: 2
 services:
-  python:
+  default:
+    name: web
     build:
-      dockerfile: Dockerfile
-    env:
-      - PORT: 3000
-    command: python app.py
+      image: railwayapp/python:3.8
+      port: 3000
+      environment:
+        - RAILWAY_START_CMD=python app.py
